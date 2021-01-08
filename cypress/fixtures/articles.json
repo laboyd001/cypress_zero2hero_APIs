@@ -1,0 +1,39 @@
+{
+  "articles": [
+    {
+      "title": "Hello World",
+      "slug": "hello-world",
+      "body": "Welcome to Cypress Automation Testing",
+      "createdAt": "2021-01-08T21:45:10.838Z",
+      "updatedAt": "2021-01-08T21:45:10.838Z",
+      "tagList": ["cypress"],
+      "description": "Fun with Automation",
+      "author": {
+        "username": "laboyd001",
+        "bio": null,
+        "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
+        "following": false
+      },
+      "favorited": false,
+      "favoritesCount": 1
+    },
+    {
+      "title": "Knjaz",
+      "slug": "knjaz-oaz5fk",
+      "body": "Kisela Voda",
+      "createdAt": "2021-01-08T21:44:37.058Z",
+      "updatedAt": "2021-01-08T21:44:37.058Z",
+      "tagList": ["soda"],
+      "description": "Milos",
+      "author": {
+        "username": "katarina",
+        "bio": null,
+        "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
+        "following": false
+      },
+      "favorited": false,
+      "favoritesCount": 5
+    }
+    ],
+  "articlesCount": 2
+}

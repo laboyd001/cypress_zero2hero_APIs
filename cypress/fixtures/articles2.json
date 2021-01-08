@@ -1,0 +1,19 @@
+{
+  "article": {
+    "title": "Knjaz",
+    "slug": "knjaz-4ekxvp",
+    "body": "Kisela Voda",
+    "createdAt": "2021-01-08T21:45:10.838Z",
+    "updatedAt": "2021-01-08T21:45:10.838Z",
+    "tagList": ["soda"],
+    "description": "Milos",
+    "author": {
+      "username": "katarina",
+      "bio": null,
+      "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
+      "following": false
+    },
+    "favorited": true,
+    "favoritesCount": 1
+  }
+}
