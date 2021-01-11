@@ -1,6 +1,5 @@
 /// <reference types="cypress" />
 
-
 describe('Test with backend', () => {
 
     beforeEach('login to the app', () => {
@@ -56,7 +55,7 @@ describe('Test with backend', () => {
 
     })
 
-    it.only('intercepting and modifying the request and response', () => {
+    it('intercepting and modifying the request and response', () => {
 
         // cy.intercept('POST', '**/articles', (req)=> {
         //     req.body.article.description = "This is a description 2"
@@ -84,4 +83,52 @@ describe('Test with backend', () => {
         })
 
     })
+
+    it.only('delete a new article in a global feed', ()=> {
+
+        const userCredentials = {
+            "user": {
+                "email": "lesley@blackthorn.io", 
+                "password": "password1234!"
+            }
+        }
+
+        const bodyRequest = {
+            "article": {
+                "tagList": [], 
+                "title": "Request from API", 
+                "description": "API testing is easy", 
+                "body": "Angular is cool"
+            }
+        }
+
+        //api request
+        cy.request('POST', 'https://conduit.productionready.io/api/users/login', userCredentials)
+        .its('body').then(body => {
+            const token = body.user.token
+
+            cy.request({
+                url: 'https://conduit.productionready.io/api/articles/',
+                headers: {'Authorization': 'Token '+token},
+                method: 'POST',
+                body: bodyRequest
+            }).then( response => {
+                expect(response.status).to.equal(200)
+            })
+
+            cy.contains('Global Feed').click()
+            cy.get('.article-preview').first().click()
+            cy.get('.article-actions').contains('Delete Article').click()
+
+            cy.request({
+                url: 'https://conduit.productionready.io/api/articles?limit=10&offset=0',
+                headers: {'Authorization': 'Token '+token},
+                method: 'GET'
+            }).its('body').then(body => {
+                expect(body.articles[0].title).not.to.equal('Response from API')
+            })
+
+        })
+    })
+
 })
