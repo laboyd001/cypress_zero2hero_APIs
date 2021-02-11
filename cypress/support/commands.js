@@ -51,7 +51,7 @@ Cypress.Commands.add('loginToApplication', () => {
     //before headless refactor:
 
     // cy.visit('/login')
-    // cy.get('[placeholder="Email"]').type('lesley@blackthorn.io')
-    // cy.get('[placeholder="Password"]').type('password1234!')
+    // cy.get('[placeholder="Email"]').type('****')
+    // cy.get('[placeholder="Password"]').type('****')
     // cy.get('form').submit()
 })
